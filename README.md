@@ -5,5 +5,3 @@
 ```
 cargo run
 ```
-
-cargo +nightly clippy --all-features -- -D warnings

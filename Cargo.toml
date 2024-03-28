@@ -1,0 +1,31 @@
+[package]
+name = "alloy-repro"
+version = "0.1.0"
+edition = "2021"
+
+[lints]
+rust.missing_docs = "warn"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+alloy = { git = "https://github.com/alloy-rs/alloy", rev = "66fa192", features = [
+    "contract",
+    "network",
+    "node-bindings",
+    "providers",
+    "rpc-client",
+    "signer-wallet",
+] }
+
+eyre = "0.6.12"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+[patch.crates-io]
+alloy-core = { git = "https://github.com/alloy-rs/core", rev = "525a233" }
+alloy-dyn-abi = { git = "https://github.com/alloy-rs/core", rev = "525a233" }
+alloy-json-abi = { git = "https://github.com/alloy-rs/core", rev = "525a233" }
+alloy-primitives = { git = "https://github.com/alloy-rs/core", rev = "525a233" }
+alloy-sol-macro = { git = "https://github.com/alloy-rs/core", rev = "525a233" }
+alloy-sol-types = { git = "https://github.com/alloy-rs/core", rev = "525a233" }
+syn-solidity = { git = "https://github.com/alloy-rs/core", rev = "525a233" }
